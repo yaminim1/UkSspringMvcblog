@@ -23,7 +23,9 @@ USE nov2017;
    FOREIGN KEY (role_id) REFERENCES role (role_id));
    
 CREATE TABLE `nov2017`.`article` (
+	
   `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT null,
   `title` VARCHAR(45) NOT NULL,
   `description` VARCHAR(10000) NOT NULL,
   `reply_count` INT NULL,
@@ -34,10 +36,12 @@ CREATE TABLE `nov2017`.`article` (
   `created_date` DATE NULL,
   `last_update_by` VARCHAR(45) NULL,
   `Last_update_date` DATE NULL,
-  PRIMARY KEY (`id`));
+  PRIMARY KEY (`id`),
+  CONSTRAINT `article_user` FOREIGN KEY (user_id) REFERENCES user (user_id));
   
   CREATE TABLE `reply` (
   `id` INT NOT NULL,
+  `user_id` INT NOT null,
   `reply_id` INT NOT NULL AUTO_INCREMENT,
   `description` varchar(10000) DEFAULT NULL,
    `verify_flg` TINYINT NULL,
@@ -45,8 +49,9 @@ CREATE TABLE `nov2017`.`article` (
   `created_by` varchar(45) DEFAULT NULL,
   `created_date` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`reply_id`),
-  CONSTRAINT `reply_ibfk_1` FOREIGN KEY (`id`) REFERENCES `article` (`id`)
-) ;
+  CONSTRAINT `reply_ibfk_1` FOREIGN KEY (`id`) REFERENCES `article` (`id`),
+   CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`));
+   
 INSERT INTO `user` (`user_id`,`email`,`password`,`name`,`last_name`,`active`) VALUES (1,'yamini@gmail.com','yamini','Yamini','Venkat',1);
 INSERT INTO `user` (`user_id`,`email`,`password`,`name`,`last_name`,`active`) VALUES (2,'admin@gmail.com','admin','admin','owner',1);
 
