@@ -1,0 +1,41 @@
+html,body{
+height:100%;	
+}
+.container{
+	max-width:400px;
+	height:100%;
+	min-height:100%;
+	display:table;
+
+}
+.form-signin{
+	display:table-cell;
+	vertical-align:middle;
+}
+.box{
+	border:1px red dotted;
+}
+.navbar-brand{
+	font-size:25px;
+}
+ .navbar-default{
+ background:#00509e;
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #00509e;
+    border-color: #357ebd;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+.navbar-fixed-bottom{
+	color:white;
+}

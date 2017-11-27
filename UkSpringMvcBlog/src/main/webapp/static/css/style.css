@@ -1,0 +1,44 @@
+.invisible-at-first {
+	display: none;
+}
+
+.box {
+	border: 1px red dotted;
+}
+.body{
+	font-size:20px;
+}
+.form-group.required .control-label:after {
+	content: "*";
+	color: red;
+}
+/* .container-fluid{
+	text-transform: capitalize;
+} */
+
+ .navbar-default{
+ background:#00509e;
+}
+.navbar-default .navbar-brand {
+	color:white;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
+{
+	color:white;
+}
+.navbar-fixed-bottom{
+	color:white;
+}
+.btn-primary{
+	 background:#00509e;
+}
+.morecontent span {
+    display: none;
+}
+.morelink {
+    display: block;
+}
+
